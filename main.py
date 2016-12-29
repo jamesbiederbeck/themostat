@@ -27,8 +27,9 @@
 #This part is to connect to the WiFi
 #In this case: SSID: TP-LINK_F3D4B2 & PASS: 90546747
 
-WIFISSID='TP-LINK_F3D4B2'
-WIFIPASS='90546747'
+with open("wifi.txt") as f:
+    data=f.read()
+    WIFISSID,WIFIPASS=data.split("\n")[0],data.split("\n")[1]
 
 def do_connect():
     from network import WLAN
